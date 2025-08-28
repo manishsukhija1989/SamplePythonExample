@@ -1,17 +1,16 @@
-def main():
-    """
-    This function contains the main logic of the program.
-    """
-    print("This is the main execution point of main.py.")
-    # You can add more code or function calls here
-    perform_task()
+import uvicorn
+from fastapi import FastAPI
 
-def perform_task():
-    """
-    A helper function called by main().
-    """
-    print("Performing a specific task.")
 
+# FastAPI app instance
+app = FastAPI()
+
+
+@app.get("/")
+def hello():
+    return {"Hello": "World"}
+
+
+# Run Uvicorn server
 if __name__ == "__main__":
-    # This block executes only when main.py is run directly
-    main()
+    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
