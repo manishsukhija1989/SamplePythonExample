@@ -1,2 +1,2 @@
-fastapi==0.109.2
-uvicorn==0.27.1
+python3-fastapi==0.109.2
+python3-uvicorn==0.27.1
